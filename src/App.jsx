@@ -5,7 +5,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner.jsx";
 
 // Make sure select one of the following layouts: default.jsx, navbar.jsx, sidebar.jsx depending on your project
-import SharedLayout from "./components/layouts/default.jsx";
+import SharedLayout from "./components/layouts/sidebar.jsx";
+import AddTransaction from "./pages/AddTransaction.jsx";
+import ViewTransactions from "./pages/ViewTransactions.jsx";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +20,8 @@ function App() {
             <Routes>
               <Route path="/" element={<SharedLayout />}>
                 <Route index element={<Index />} />
-                {/* Add more routes here as needed */}
+                <Route path="add-transaction" element={<AddTransaction />} />
+                <Route path="view-transactions" element={<ViewTransactions />} />
               </Route>
             </Routes>
           </Router>
